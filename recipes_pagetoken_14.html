@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8">
+    <title>Dishmize | Recipes</title>
+    <meta name="description" content="Recipes Food - Food & Recipes Food Template">
+    <meta name="keywords" content="recipes food, recipes , sushi, chinese, italian food">
+    <meta name="author" content="themearabia.net">
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Main Style -->
+    <link rel="stylesheet" href="public/css/style.css">
+    <!-- customize CSS Style -->
+    <link rel="stylesheet" href="public/css/customize.css">
+    <!-- Skins Style -->
+    <link rel="stylesheet" href="public/css/skins/skins.css">
+    <!-- Responsive Style -->
+    <link rel="stylesheet" href="public/css/responsive.css">
+    <!-- Cropper Css -->
+    <link rel="stylesheet" href="public/css/cropper.css">
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="public/images/favicon.png">
+    <!-- Star Rating -->
+    <link rel="stylesheet" href="ajax/libs/bootstrap-star-rating/4-0-2/css/star-rating.min.css" />
+    <!-- Font Awesome -->
+    <link href="font-awesome/4-7-0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <style>
+        .RecipeContainer {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+        }
+        .RecipeImage {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        .Recipe-Overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            transition: .3s ease;
+            background-color: rgba(184, 185, 185, 0.356);
+        }
+        .RecipeContainer:hover .Recipe-Icon {
+            opacity: 1;
+        }
+        .Recipe-Icon {
+            color: white;
+            position: absolute;
+            font-size: 30px;
+            opacity: 0;
+            width: 100%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -10%);
+            -ms-transform: translate(-50%, -10%);
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="sticky">
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+    <!-- wrap Page -->
+    <div id="wrap">
+        <!-- Header Top -->
+        <div id="header-top">
+            <div class="container">
+                <div class="row">
+                    <nav class="col-md-12">
+                        <div class="main-menu-2 pull-left">
+                           <ul class="list-inline HeaderInfo">
+                                <li><a href="mailto:mail@dishmize.net"><i class="fa fa-envelope" aria-hidden="true"></i> mail@dishmize.net</a></li> 
+                            </ul>
+                        </div><!-- End main-menu-2 -->
+                        <div class="main-menu-2 pull-right">
+                           <ul class="list-inline social HeaderInfo">
+                               <li class="fb"><a href="https://www.facebook.com/DishMize-197693270939732/?modal=admin_todo_tour" target="_blank" title=""><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                <li class="ins"><a href="https://www.instagram.com/dishmize_network/" target="_blank" title=""><i class="fa fa-instagram"></i></a></li>
+                                <li class="in"><a href="https://www.linkedin.com/in/dishmize-network-838094167/" target="_blank" title=""><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                <li class="tw"><a href="https://twitter.com/dishmize" target="_blank" title=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div><!-- End main-menu-2 -->
+                    </nav>
+                </div>
+            </div> 
+        </div><!-- End Header Top -->
+        <!-- End Header Top -->
+        <!-- Header -->
+        <header class="style2">
+            <style>
+    #imgprofile {
+  border-radius: 50%;
+}
+</style>
+<div class="container">
+    <div class="logo" style="margin-left: 0px;">
+        <a href="index.html">
+            <img src="public/images/logoo.png" alt="" class="hidden-sm hidden-xs" style="width: 180px;border: 8px solid #0a5b92;border-radius: 100px;">
+            <img src="public/images/logoo.png" alt="" class="hidden-lg hidden-md" style="width: 180px;border: 8px solid #0a5b92;border-radius: 100px;">
+        </a>
+    </div>
+    <!-- responsive nav -->
+    <nav class="menu-panel" id="res-menu">
+        <a class="np-toggle-switch np-toggle-switch-nxp open_close" href="javascript:void(0);"><span>Menu mobile</span></a>
+        <div class="main-menu" id="main-menu">
+            <div id="header_menu">
+                <!-- <img src="/public/images/logo-menu.png" alt=""> -->
+            </div>
+            <a href="#" class="open_close" id="close_in"><i class="icon_close"></i></a>
+            <ul>
+                <li><a href="index.html" class="show-submenu"><i class="icon_house_alt"></i> Home </a></li>
+                <li><a href="recipes.html"><i class="icon-themeenergy_serving-plate3"></i> Recipes </a></li>
+                <li><a href="dishmizer.html"><i class="ic icon-chefs"></i> Dishmizer </a></li>
+                <li><a href="blog.html"><i class="ic icon-books"></i> Blog </a></li>
+                <li><a href="community.html"><i class="ic icon-community2"></i> Community </a></li>
+                <li><a href="about-us.html"><i class="icon-themeenergy_hand-touch-1"></i> About Us </a></li>
+                <li><a href="earn-money.html" class="show-submenu"><i class="fa fa-usd" style="font-size: 18px;border: 3px solid white;border-radius: 50%;width: 33px;height: 32px;padding-top: 5px;"></i> Earn Money </a></li>
+                <li><a href="contact-us.html"><i class="icon-themeenergy_phone-contacts"></i> Contact Us </a></li>
+                <li><a href="registration.html" title=""><i class="fa fa-user"></i> Register </a></li>
+                <li><a href="login.html" title=""><i class="fa fa-sign-in" ></i> Login </a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- responsive nav -->
+    <div class="row">
+        <nav class="col-md-6">
+            <div class="main-menu pull-left">
+                <ul style="margin-left:0px;">
+                    <li class="submenu">
+                        <a href="index.html" class="show-submenu"><i class="icon_house_alt"></i> Home </a>
+                    </li>
+                    <li><a href="recipes.html"><i class="icon-themeenergy_serving-plate3"></i> Recipes </a></li>
+                    <li><a href="dishmizer.html"><i class="ic icon-chefs"></i> Dishmizer </a></li>
+                    <li><a href="blog.html" class="show-submenu"><i class="ic icon-books"></i> Blog </a></li>
+                    <li><a href="community.html" class="show-submenu"><img src="public/images/communit1y.png" style="display:inherit;padding-left: 12px;padding-bottom: 3px;height: 45px;"> Community </a></li>
+                </ul>
+            </div><!-- End main-menu -->
+        </nav>
+        <nav class="col-md-6">
+            <div class="main-menu">
+                <ul style="margin-right:-20px;">
+                    <li><a href="about-us.html" style="padding: 5px 6px 15px 6px !important;"><i class="icon-themeenergy_hand-touch-1"></i> About Us </a></li>
+                    <li><a href="make-money.html" class="show-submenu" style="padding: 5px 6px 15px 6px !important;"><img src="public/images/payment-logo.png" style="width: 40px;display: -webkit-box;margin: auto;margin-bottom: 5px;"> Make Money </a> </li>
+                    <li><a href="contact-us.html" style="padding: 5px 6px 15px 6px !important;"><i class="icon-themeenergy_phone-contacts"></i> Contact Us </a></li>
+                    <li><a href="registration.html" title="" style="padding: 5px 6px 15px 6px !important;"><i class="fa fa-user-o"></i> Register </a></li>
+                    <li > <a href="login.html" style="padding: 5px 7px 15px 7px !important;"><img src="public/images/jj.png" style="width: 45px;height: 40px;"> <p style="color: whitesmoke;font-size: 15px;"> Login </p></a>  </i></a></li>
+                </ul>
+            </div><!-- End main-menu -->
+        </nav>
+    </div><!-- End row -->
+</div>
+        </header><!-- End Header -->
+        <!-- SubHeader -->
+        <section class="parallax-window" id="short" data-parallax="scroll" data-image-src="/public/images/recipes.jpg">
+            <div id="sub_header">
+                <div class="container" id="sub_content">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1>
+                                Recipes
+                            </h1>
+                            <div class="bread-crums">
+                                <a href="index.html">Home</a>
+                                <span class="bread-crums-span">&raquo;</span>
+                                <span class="current">
+                                    Recipes</span>
+                            </div><!-- End bread-crums -->
+                        </div>
+                        <div>
+                                <form method="post" id="search_recipes" action="recipes/search.html">
+                                    <div id="custom-search-input">
+                                        <div class="input-group" style="margin-left: 95px;">
+                                            <input type="text" name="recipes_search" id="recipes_search" class="search-query"
+                                                style="float: left;margin: 0 -1px 0 0;padding-left: 20px;width: 360px;height: 40px;border-radius: 0px;border: 1px solid gray;border-right: none;"
+                                                placeholder="Search..." required>
+                                            <span class="input-group-btn" style="font-size:12px;">
+                                                <input type="submit" class="btn_search" value="SEARCH" style="color: white;background: #0a5b92;;font-weight: bold;float: left;min-width: 86px;padding: 0 15px;text-align: center;color: #fff !important;text-transform: uppercase;border-top-right-radius: 25px;border-bottom-right-radius: 25px;height: 40px;    border: 1px solid gray;">
+                                            </span>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                    </div><!-- End row -->
+                </div><!-- End container -->
+            </div>
+        </section>
+        <div>
+        </div>
+        <!-- End SubHeader -->
+        <section class="featuredRecipe margin_60">
+            <div class="container">
+                <div class="main_title">
+                    <h2 class="nomargin_top">Recipes</h2>
+                    <hr class="divider">
+                </div><!-- End main_title -->
+                <div class="row">
+                    <div class="above-sidebar full-width">
+                        <ul class="boxed">
+                            <li class="light"><a href="recipes/category/african.html"><i class="icon icon-themeenergy_kebab"></i>
+                                    <span>African</span></a></li>
+                            <li class="medium"><a href="recipes/category/animals.html"><i class="icon dog-icon"></i> <span>Animals</span></a></li>
+                            <li class="dark"><a href="recipes/category/apetizers.html"><i class="icon icon-themeenergy_pasta"></i>
+                                    <span>Apetizers</span></a></li>
+                            <li class="light"><a href="recipes/category/asian.html"><i class="icon icon-themeenergy_sushi"></i>
+                                    <span>Asian</span></a></li>
+                            <li class="medium"><a href="recipes/category/babies.html"><i class="icon baby-icon"></i> <span>Babies</span></a></li>
+                            <li class="dark"><a href="recipes/category/caribbean.html"><i class="icon icon-themeenergy_burger-coke"></i>
+                                    <span>Caribbean</span></a></li>
+                            <li class="medium"><a href="recipes/category/cocktails.html"><i class="icon icon-themeenergy_margarita2"></i>
+                                    <span>Cocktails</span></a></li>
+                            <li class="dark"><a href="recipes/category/deserts.html"><i class="icon icon-themeenergy_cupcake"></i>
+                                    <span>Deserts</span></a></li>
+                            <li class="light"><a href="recipes/category/eggs.html"><i class="icon icon-themeenergy_eggs"></i>
+                                    <span>Eggs</span></a></li>
+                            <li class="dark"><a href="recipes/category/equipment.html"><i class="icon icon-themeenergy_blender"></i>
+                                    <span>Equipment</span></a></li>
+                            <li class="light"><a href="recipes/category/events.html"><i class="icon icon-themeenergy_turkey"></i>
+                                    <span>Events</span></a></li>
+                            <li class="medium"><a href="recipes/category/fish.html"><i class="icon icon-themeenergy_fish2"></i>
+                                    <span>Fish</span></a></li>
+                            <li class="dark"><a href="recipes/category/fitness.html"><i class="icon icon-themeenergy_biceps"></i>
+                                    <span>Fitness</span></a></li>
+                            <li class="light"><a href="recipes/category/healthy.html"><i class="icon icon-themeenergy_apple2"></i>
+                                    <span>Healthy</span></a></li>
+                            <li class="medium"><a href="recipes/category/hot_cold.html"><i class="icon icon-themeenergy_coffee-2"></i>
+                                    <span>Hot &amp; Cold</span></a></li>
+                            <li class="light"><a href="recipes/category/kids.html"><i class="icon icon-themeenergy_happy"></i>
+                                    <span>Kids</span></a></li>
+                            <li class="medium"><a href="recipes/category/meat.html"><i class="icon icon-themeenergy_meat"></i>
+                                    <span>Meat</span></a></li>
+                            <li class="dark"><a href="recipes/category/mexican.html"><i class="icon icon-themeenergy_peper"></i>
+                                    <span>Mexican</span></a></li>
+                            <li class="medium marginLeft"><a href="recipes/category/middle_east.html"><i class="icon icon-themeenergy_turkey"></i>
+                                    <span>Middle East</span></a></li>
+                            <li class="light"><a href="recipes/category/pizza.html"><i class="icon  icon-themeenergy_pizza-slice"></i>
+                                    <span>Pizza</span></a></li>
+                            <li class="medium"><a href="recipes/category/salads.html"><i class="icon icon-themeenergy_eggplant"></i>
+                                    <span>Salads</span></a></li>
+                            <li class="dark"><a href="recipes/category/sandwiches.html"><i class="icon icon-themeenergy_bread-3"></i>
+                                    <span>Sandwiches</span></a></li>
+                            <li class="light"><a href="recipes/category/snacks.html"><i class="icon icon-themeenergy_fried-potatoes"></i>
+                                    <span>Snacks</span></a></li>
+                            <li class="dark"><a href="recipes/category/soups.html"><i class="icon icon-themeenergy_soup2"></i>
+                                    <span>Soups</span></a></li>
+                            <li class="light"><a href="recipes/category/vegetarian.html"><i class="icon icon-themeenergy_plant-symbol"></i>
+                                    <span>Vegetarian</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="entry gray_bg">
+                            <div class="RecipeContainer">
+                            </div>
+                            <div class="shortDesc">
+                                <h4><a href="single-recipes/buy/225.html">
+                                        dhdhh</a></h4>
+                                <div class="actions">
+                                    <div class="rows">
+                                        <div class="difficulty col-xs-12"><img class="img-circle" src="public/images/userphotos/100.jpg"
+                                                alt=""><a href="dishmizer-profile/38.html"><span>
+                                                    mohamed
+                                                    ferjany</span></a></div>
+                                        <!-- <div class="difficulty col-xs-12"><img class="img-circle" src="100.jpg" alt=""><a href="dishmizer-profile/38.html"><span>mohamed ferjany</span></a></div> -->
+                                        <div class="clearfix"></div>
+                                        <div class="likes col-xs-3"><a href="javascript:void(0);" onclick="actOnPost(event)"><i
+                                                    class="fa fa-heart" data-post-id="225"
+                                                    data-post-action="Like" aria-hidden="true"></i> <span id="likes-count-225">
+                                                    0</span> </a></div>
+                                        <div class="commented col-xs-3"><a href="login.html"><i class="fa fa-comment"
+                                                    aria-hidden="true"></i>
+                                                0</a></div>
+                                        <div class="col-sm-6 RacStar">
+                                            <a href="single-recipes/buy/225.html">
+                                                <lable class="star-rating">
+                                                    <input id="input-2-xs" name="input-2" data-readonly="true" class="rating rating-loading"
+                                                        data-min="0" data-max="5" data-step="0.5" data-size="xs" value="">
+                                                </lable>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="entry gray_bg">
+                            <div class="RecipeContainer">
+                            </div>
+                            <div class="shortDesc">
+                                <h4><a href="single-recipes/buy/224.html">
+                                        eheh</a></h4>
+                                <div class="actions">
+                                    <div class="rows">
+                                        <div class="difficulty col-xs-12"><img class="img-circle" src="public/images/userphotos/19-1551345090594.jpg"
+                                                alt=""><a href="dishmizer-profile/19.html"><span>
+                                                    hala
+                                                    taha</span></a></div>
+                                        <!-- <div class="difficulty col-xs-12"><img class="img-circle" src="19-1551345090594.jpg" alt=""><a href="dishmizer-profile/19.html"><span>hala taha</span></a></div> -->
+                                        <div class="clearfix"></div>
+                                        <div class="likes col-xs-3"><a href="javascript:void(0);" onclick="actOnPost(event)"><i
+                                                    class="fa fa-heart" data-post-id="224"
+                                                    data-post-action="Like" aria-hidden="true"></i> <span id="likes-count-224">
+                                                    0</span> </a></div>
+                                        <div class="commented col-xs-3"><a href="login.html"><i class="fa fa-comment"
+                                                    aria-hidden="true"></i>
+                                                0</a></div>
+                                        <div class="col-sm-6 RacStar">
+                                            <a href="single-recipes/buy/224.html">
+                                                <lable class="star-rating">
+                                                    <input id="input-2-xs" name="input-2" data-readonly="true" class="rating rating-loading"
+                                                        data-min="0" data-max="5" data-step="0.5" data-size="xs" value="">
+                                                </lable>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="entry gray_bg">
+                            <div class="RecipeContainer">
+                            </div>
+                            <div class="shortDesc">
+                                <h4><a href="single-recipes/buy/223.html">
+                                        dhhf</a></h4>
+                                <div class="actions">
+                                    <div class="rows">
+                                        <div class="difficulty col-xs-12"><img class="img-circle" src="public/images/userphotos/100.jpg"
+                                                alt=""><a href="dishmizer-profile/38.html"><span>
+                                                    mohamed
+                                                    ferjany</span></a></div>
+                                        <!-- <div class="difficulty col-xs-12"><img class="img-circle" src="100.jpg" alt=""><a href="dishmizer-profile/38.html"><span>mohamed ferjany</span></a></div> -->
+                                        <div class="clearfix"></div>
+                                        <div class="likes col-xs-3"><a href="javascript:void(0);" onclick="actOnPost(event)"><i
+                                                    class="fa fa-heart" data-post-id="223"
+                                                    data-post-action="Like" aria-hidden="true"></i> <span id="likes-count-223">
+                                                    0</span> </a></div>
+                                        <div class="commented col-xs-3"><a href="login.html"><i class="fa fa-comment"
+                                                    aria-hidden="true"></i>
+                                                0</a></div>
+                                        <div class="col-sm-6 RacStar">
+                                            <a href="single-recipes/buy/223.html">
+                                                <lable class="star-rating">
+                                                    <input id="input-2-xs" name="input-2" data-readonly="true" class="rating rating-loading"
+                                                        data-min="0" data-max="5" data-step="0.5" data-size="xs" value="">
+                                                </lable>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="entry gray_bg">
+                            <div class="RecipeContainer">
+                            </div>
+                            <div class="shortDesc">
+                                <h4><a href="single-recipes/buy/222.html">
+                                        eheheh</a></h4>
+                                <div class="actions">
+                                    <div class="rows">
+                                        <div class="difficulty col-xs-12"><img class="img-circle" src="public/images/userphotos/19-1551345090594.jpg"
+                                                alt=""><a href="dishmizer-profile/19.html"><span>
+                                                    hala
+                                                    taha</span></a></div>
+                                        <!-- <div class="difficulty col-xs-12"><img class="img-circle" src="19-1551345090594.jpg" alt=""><a href="dishmizer-profile/19.html"><span>hala taha</span></a></div> -->
+                                        <div class="clearfix"></div>
+                                        <div class="likes col-xs-3"><a href="javascript:void(0);" onclick="actOnPost(event)"><i
+                                                    class="fa fa-heart" data-post-id="222"
+                                                    data-post-action="Like" aria-hidden="true"></i> <span id="likes-count-222">
+                                                    0</span> </a></div>
+                                        <div class="commented col-xs-3"><a href="login.html"><i class="fa fa-comment"
+                                                    aria-hidden="true"></i>
+                                                0</a></div>
+                                        <div class="col-sm-6 RacStar">
+                                            <a href="single-recipes/buy/222.html">
+                                                <lable class="star-rating">
+                                                    <input id="input-2-xs" name="input-2" data-readonly="true" class="rating rating-loading"
+                                                        data-min="0" data-max="5" data-step="0.5" data-size="xs" value="">
+                                                </lable>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="entry gray_bg">
+                            <div class="RecipeContainer">
+                            </div>
+                            <div class="shortDesc">
+                                <h4><a href="single-recipes/buy/221.html">
+                                        hhehe</a></h4>
+                                <div class="actions">
+                                    <div class="rows">
+                                        <div class="difficulty col-xs-12"><img class="img-circle" src="public/images/userphotos/100.jpg"
+                                                alt=""><a href="dishmizer-profile/38.html"><span>
+                                                    mohamed
+                                                    ferjany</span></a></div>
+                                        <!-- <div class="difficulty col-xs-12"><img class="img-circle" src="100.jpg" alt=""><a href="dishmizer-profile/38.html"><span>mohamed ferjany</span></a></div> -->
+                                        <div class="clearfix"></div>
+                                        <div class="likes col-xs-3"><a href="javascript:void(0);" onclick="actOnPost(event)"><i
+                                                    class="fa fa-heart" data-post-id="221"
+                                                    data-post-action="Like" aria-hidden="true"></i> <span id="likes-count-221">
+                                                    0</span> </a></div>
+                                        <div class="commented col-xs-3"><a href="login.html"><i class="fa fa-comment"
+                                                    aria-hidden="true"></i>
+                                                0</a></div>
+                                        <div class="col-sm-6 RacStar">
+                                            <a href="single-recipes/buy/221.html">
+                                                <lable class="star-rating">
+                                                    <input id="input-2-xs" name="input-2" data-readonly="true" class="rating rating-loading"
+                                                        data-min="0" data-max="5" data-step="0.5" data-size="xs" value="">
+                                                </lable>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="entry gray_bg">
+                            <div class="RecipeContainer">
+                            </div>
+                            <div class="shortDesc">
+                                <h4><a href="single-recipes/buy/220.html">
+                                        hdhdh</a></h4>
+                                <div class="actions">
+                                    <div class="rows">
+                                        <div class="difficulty col-xs-12"><img class="img-circle" src="public/images/userphotos/19-1551345090594.jpg"
+                                                alt=""><a href="dishmizer-profile/19.html"><span>
+                                                    hala
+                                                    taha</span></a></div>
+                                        <!-- <div class="difficulty col-xs-12"><img class="img-circle" src="19-1551345090594.jpg" alt=""><a href="dishmizer-profile/19.html"><span>hala taha</span></a></div> -->
+                                        <div class="clearfix"></div>
+                                        <div class="likes col-xs-3"><a href="javascript:void(0);" onclick="actOnPost(event)"><i
+                                                    class="fa fa-heart" data-post-id="220"
+                                                    data-post-action="Like" aria-hidden="true"></i> <span id="likes-count-220">
+                                                    0</span> </a></div>
+                                        <div class="commented col-xs-3"><a href="login.html"><i class="fa fa-comment"
+                                                    aria-hidden="true"></i>
+                                                0</a></div>
+                                        <div class="col-sm-6 RacStar">
+                                            <a href="single-recipes/buy/220.html">
+                                                <lable class="star-rating">
+                                                    <input id="input-2-xs" name="input-2" data-readonly="true" class="rating rating-loading"
+                                                        data-min="0" data-max="5" data-step="0.5" data-size="xs" value="">
+                                                </lable>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="entry gray_bg">
+                            <div class="RecipeContainer">
+                            </div>
+                            <div class="shortDesc">
+                                <h4><a href="single-recipes/buy/219.html">
+                                        djfjf</a></h4>
+                                <div class="actions">
+                                    <div class="rows">
+                                        <div class="difficulty col-xs-12"><img class="img-circle" src="public/images/userphotos/19-1551345090594.jpg"
+                                                alt=""><a href="dishmizer-profile/19.html"><span>
+                                                    hala
+                                                    taha</span></a></div>
+                                        <!-- <div class="difficulty col-xs-12"><img class="img-circle" src="19-1551345090594.jpg" alt=""><a href="dishmizer-profile/19.html"><span>hala taha</span></a></div> -->
+                                        <div class="clearfix"></div>
+                                        <div class="likes col-xs-3"><a href="javascript:void(0);" onclick="actOnPost(event)"><i
+                                                    class="fa fa-heart" data-post-id="219"
+                                                    data-post-action="Like" aria-hidden="true"></i> <span id="likes-count-219">
+                                                    0</span> </a></div>
+                                        <div class="commented col-xs-3"><a href="login.html"><i class="fa fa-comment"
+                                                    aria-hidden="true"></i>
+                                                0</a></div>
+                                        <div class="col-sm-6 RacStar">
+                                            <a href="single-recipes/buy/219.html">
+                                                <lable class="star-rating">
+                                                    <input id="input-2-xs" name="input-2" data-readonly="true" class="rating rating-loading"
+                                                        data-min="0" data-max="5" data-step="0.5" data-size="xs" value="">
+                                                </lable>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="entry gray_bg">
+                            <div class="RecipeContainer">
+                            </div>
+                            <div class="shortDesc">
+                                <h4><a href="single-recipes/buy/218.html">
+                                        jfjfj</a></h4>
+                                <div class="actions">
+                                    <div class="rows">
+                                        <div class="difficulty col-xs-12"><img class="img-circle" src="public/images/userphotos/100.jpg"
+                                                alt=""><a href="dishmizer-profile/38.html"><span>
+                                                    mohamed
+                                                    ferjany</span></a></div>
+                                        <!-- <div class="difficulty col-xs-12"><img class="img-circle" src="100.jpg" alt=""><a href="dishmizer-profile/38.html"><span>mohamed ferjany</span></a></div> -->
+                                        <div class="clearfix"></div>
+                                        <div class="likes col-xs-3"><a href="javascript:void(0);" onclick="actOnPost(event)"><i
+                                                    class="fa fa-heart" data-post-id="218"
+                                                    data-post-action="Like" aria-hidden="true"></i> <span id="likes-count-218">
+                                                    0</span> </a></div>
+                                        <div class="commented col-xs-3"><a href="login.html"><i class="fa fa-comment"
+                                                    aria-hidden="true"></i>
+                                                0</a></div>
+                                        <div class="col-sm-6 RacStar">
+                                            <a href="single-recipes/buy/218.html">
+                                                <lable class="star-rating">
+                                                    <input id="input-2-xs" name="input-2" data-readonly="true" class="rating rating-loading"
+                                                        data-min="0" data-max="5" data-step="0.5" data-size="xs" value="">
+                                                </lable>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="entry gray_bg">
+                            <div class="RecipeContainer">
+                            </div>
+                            <div class="shortDesc">
+                                <h4><a href="single-recipes/buy/217.html">
+                                        ffd</a></h4>
+                                <div class="actions">
+                                    <div class="rows">
+                                        <div class="difficulty col-xs-12"><img class="img-circle" src="public/images/userphotos/19-1551345090594.jpg"
+                                                alt=""><a href="dishmizer-profile/19.html"><span>
+                                                    hala
+                                                    taha</span></a></div>
+                                        <!-- <div class="difficulty col-xs-12"><img class="img-circle" src="19-1551345090594.jpg" alt=""><a href="dishmizer-profile/19.html"><span>hala taha</span></a></div> -->
+                                        <div class="clearfix"></div>
+                                        <div class="likes col-xs-3"><a href="javascript:void(0);" onclick="actOnPost(event)"><i
+                                                    class="fa fa-heart" data-post-id="217"
+                                                    data-post-action="Like" aria-hidden="true"></i> <span id="likes-count-217">
+                                                    0</span> </a></div>
+                                        <div class="commented col-xs-3"><a href="login.html"><i class="fa fa-comment"
+                                                    aria-hidden="true"></i>
+                                                0</a></div>
+                                        <div class="col-sm-6 RacStar">
+                                            <a href="single-recipes/buy/217.html">
+                                                <lable class="star-rating">
+                                                    <input id="input-2-xs" name="input-2" data-readonly="true" class="rating rating-loading"
+                                                        data-min="0" data-max="5" data-step="0.5" data-size="xs" value="">
+                                                </lable>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="entry gray_bg">
+                            <div class="RecipeContainer">
+                            </div>
+                            <div class="shortDesc">
+                                <h4><a href="single-recipes/buy/216.html">
+                                        dff</a></h4>
+                                <div class="actions">
+                                    <div class="rows">
+                                        <div class="difficulty col-xs-12"><img class="img-circle" src="public/images/userphotos/100.jpg"
+                                                alt=""><a href="dishmizer-profile/38.html"><span>
+                                                    mohamed
+                                                    ferjany</span></a></div>
+                                        <!-- <div class="difficulty col-xs-12"><img class="img-circle" src="100.jpg" alt=""><a href="dishmizer-profile/38.html"><span>mohamed ferjany</span></a></div> -->
+                                        <div class="clearfix"></div>
+                                        <div class="likes col-xs-3"><a href="javascript:void(0);" onclick="actOnPost(event)"><i
+                                                    class="fa fa-heart" data-post-id="216"
+                                                    data-post-action="Like" aria-hidden="true"></i> <span id="likes-count-216">
+                                                    0</span> </a></div>
+                                        <div class="commented col-xs-3"><a href="login.html"><i class="fa fa-comment"
+                                                    aria-hidden="true"></i>
+                                                0</a></div>
+                                        <div class="col-sm-6 RacStar">
+                                            <a href="single-recipes/buy/216.html">
+                                                <lable class="star-rating">
+                                                    <input id="input-2-xs" name="input-2" data-readonly="true" class="rating rating-loading"
+                                                        data-min="0" data-max="5" data-step="0.5" data-size="xs" value="">
+                                                </lable>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="entry gray_bg">
+                            <div class="RecipeContainer">
+                            </div>
+                            <div class="shortDesc">
+                                <h4><a href="single-recipes/buy/215.html">
+                                        dhfh</a></h4>
+                                <div class="actions">
+                                    <div class="rows">
+                                        <div class="difficulty col-xs-12"><img class="img-circle" src="public/images/userphotos/19-1551345090594.jpg"
+                                                alt=""><a href="dishmizer-profile/19.html"><span>
+                                                    hala
+                                                    taha</span></a></div>
+                                        <!-- <div class="difficulty col-xs-12"><img class="img-circle" src="19-1551345090594.jpg" alt=""><a href="dishmizer-profile/19.html"><span>hala taha</span></a></div> -->
+                                        <div class="clearfix"></div>
+                                        <div class="likes col-xs-3"><a href="javascript:void(0);" onclick="actOnPost(event)"><i
+                                                    class="fa fa-heart" data-post-id="215"
+                                                    data-post-action="Like" aria-hidden="true"></i> <span id="likes-count-215">
+                                                    0</span> </a></div>
+                                        <div class="commented col-xs-3"><a href="login.html"><i class="fa fa-comment"
+                                                    aria-hidden="true"></i>
+                                                0</a></div>
+                                        <div class="col-sm-6 RacStar">
+                                            <a href="single-recipes/buy/215.html">
+                                                <lable class="star-rating">
+                                                    <input id="input-2-xs" name="input-2" data-readonly="true" class="rating rating-loading"
+                                                        data-min="0" data-max="5" data-step="0.5" data-size="xs" value="">
+                                                </lable>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="entry gray_bg">
+                            <div class="RecipeContainer">
+                            </div>
+                            <div class="shortDesc">
+                                <h4><a href="single-recipes/buy/214.html">
+                                        dhhf</a></h4>
+                                <div class="actions">
+                                    <div class="rows">
+                                        <div class="difficulty col-xs-12"><img class="img-circle" src="public/images/userphotos/100.jpg"
+                                                alt=""><a href="dishmizer-profile/38.html"><span>
+                                                    mohamed
+                                                    ferjany</span></a></div>
+                                        <!-- <div class="difficulty col-xs-12"><img class="img-circle" src="100.jpg" alt=""><a href="dishmizer-profile/38.html"><span>mohamed ferjany</span></a></div> -->
+                                        <div class="clearfix"></div>
+                                        <div class="likes col-xs-3"><a href="javascript:void(0);" onclick="actOnPost(event)"><i
+                                                    class="fa fa-heart" data-post-id="214"
+                                                    data-post-action="Like" aria-hidden="true"></i> <span id="likes-count-214">
+                                                    0</span> </a></div>
+                                        <div class="commented col-xs-3"><a href="login.html"><i class="fa fa-comment"
+                                                    aria-hidden="true"></i>
+                                                0</a></div>
+                                        <div class="col-sm-6 RacStar">
+                                            <a href="single-recipes/buy/214.html">
+                                                <lable class="star-rating">
+                                                    <input id="input-2-xs" name="input-2" data-readonly="true" class="rating rating-loading"
+                                                        data-min="0" data-max="5" data-step="0.5" data-size="xs" value="">
+                                                </lable>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 clearfix">
+                        <div class="text-center">
+                            <a class="button-more larg-Btn" href="index.html">More Recipe</a>
+                        </div>
+                    </div>
+                </div><!-- End row -->
+            </div>
+        </section><!-- End container -->
+        <!-- newslatter -->
+        <section class="newslatter">
+            <div class="container">
+                <p>Stay Always Updated With us. Sign in with our newsletter</p>
+                <div class="subcribe">
+                    <input type="text" class="form-control" placeholder="Your Email">
+                    <a class="fa fa-paper-plane" href="javascript:void(0);"></a>
+                </div>
+            </div>
+        </section><!-- End newslatter -->
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="social_footer">
+                <h2>About Dishmize</h2>
+                <p>Our main idea... Is to offer you everything new in the culinary world to gain from your experience, which can be one of the most famous international cuisines in the future someday. </p>
+                <p>Feel free to share your recipes with us</p>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="social_footer contactDetails">
+                <h2>Need Help</h2>
+                <ul class="list-unslyled">
+                    <!--<li>Phone: <a href="tel:+91 9999 999 999">+91 9999 999 999</a></li>-->
+                    <li>Email: <a href="mailto:mail@dishmize.net">mail@dishmize.net</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="social_footer">
+                <h2>Follow Us</h2>
+                <ul class="list-inline socialNet">
+                    <li class="fb"><a href="https://www.facebook.com/DishMize-197693270939732/?modal=admin_todo_tour"
+                            target="_blank" title="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li class="ins"><a href="https://www.instagram.com/dishmize_network/" target="_blank" title="instagram"><i
+                                class="fa fa-instagram"></i></a></li>
+                    <li class="in"><a href="https://www.linkedin.com/in/dishmize-network-838094167/" target="_blank"
+                            title="linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                    <li class="tw"><a href="https://twitter.com/dishmize" target="_blank" title="twitter"><i class="fa fa-twitter"
+                                aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div><!-- End row -->
+</div><!-- End container -->
+<div class="container">
+    <div class="copyright">
+        <p class="pull-left">Copyright © <span id="spanYear"></span> Dishmize. All rights reserved</p>
+        <ul class="list-inline pull-right">
+            <li><a href="#" title="Privacy Policy">Privacy Policy</a></li>
+            <li><a href="terms-and-conditions.html" title="Terms & Conditions">Terms & Conditions</a></li>
+            <li><a href="#" title="FAQ">FAQ</a></li>
+        </ul>
+    </div>
+</div>
+        </footer><!-- End Footer -->
+    </div><!-- End wrap Page -->
+    <!-- go-up -->
+    <div class="go-up"><i class="fa fa-chevron-up"></i></div>
+    <!-- End go-up -->
+    <!-- COMMON SCRIPTS -->
+    <!-- COMMON SCRIPTS -->
+<script src="public/js/jquery-2.2.4.min.js"></script>
+<script src="public/js/bootstrap.min.js"></script>
+<script src="public/js/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="public/js/jquery.easing.1.3.min.js"></script>
+<script src="public/js/jquery.nicescroll.min.js"></script>
+<script src="public/js/jquery.scrollto.js"></script>
+<script src="public/js/resizesensor.min.js"></script>
+<script src="public/js/theia-sticky-sidebar.min.js"></script>
+<script src="public/js/parallax.min.js"></script>
+<script src="public/js/jquery.themepunch.plugins.min.js"></script>
+<script src="public/js/jquery.themepunch.revolution.min.js"></script>
+<script src="public/js/ion.rangeslider.min.js"></script>
+<!-- Star Rating -->
+<script src="public/js/star-rating.js"></script>
+<!-- cropper.js -->
+<script src="public/js/cropper.js"></script>
+<!-- Form Validation -->
+<script src="public/js/jquery.validate.min.js"></script>
+<script src="public/js/form.js"></script>
+<script src="public/js/form-main.js"></script>
+<!-- <script src="dist/rtcmulticonnection.min.js"></script> -->
+<!-- <script src="socket-io/socket.io.js"></script> -->
+<script src="public/js/mainfile.js"></script>
+<script src="js/client.js"></script>
+<!-- <script src="public/js/imagesloaded.pkgd.min.js"></script> -->
+<script src="public/js/custom.js"></script>
+</body>
+</html>
